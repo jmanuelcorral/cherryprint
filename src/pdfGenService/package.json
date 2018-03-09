@@ -1,0 +1,25 @@
+{
+  "name": "pdfgenservice",
+  "version": "1.0.0",
+  "description": "a pdfGeneration Service",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon lib/app.js --exec babel-node",
+    "build": "babel lib -d dist",
+    "serve": "node dist/app.js",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "author": "jmanuelcorral",
+  "license": "MIT",
+  "dependencies": {
+    "html-pdf": "^2.1.0",
+    "mustache": "2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "mocha": "^5.0.4",
+    "nodemon": "^1.17.1"
+  }
+}
