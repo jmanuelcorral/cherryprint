@@ -7,7 +7,7 @@
     "start": "nodemon lib/app.js --exec babel-node",
     "build": "babel lib -d dist",
     "serve": "node dist/app.js",
-    "test": "mocha --compilers js:babel-register"
+    "test": "mocha --require babel-register"
   },
   "author": "jmanuelcorral",
   "license": "MIT",
