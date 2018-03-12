@@ -4,7 +4,7 @@
   "description": "simple and lightweight report designer tool",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "parcel src/index.html"
   },
   "author": "jmanuelcorral",
   "license": "MIT",
