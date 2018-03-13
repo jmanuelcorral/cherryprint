@@ -8,10 +8,10 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      data: 'Welcome to parcel bundler'
-    }
+      data: "Welcome to parcel bundler"
+    };
   }
-}
+};
 </script>

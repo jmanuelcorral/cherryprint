@@ -7,27 +7,27 @@ const port = process.env.PORT || 3000
 
 const requestHandler = (request, response) => {
   if (request.body && request.body.data && request.body.template) {
-    response.writeHead(200, "OK", 
-    {
-      "Content-Type" : "application/pdf",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-    });
-        let data = request.body.data;
-        let template = request.body.template;
-        const html = documentFormatter.templateRender(template, data);
-        fileConverter.generatePdf(html).toStream(function(err, stream) {
-            stream.pipe(response);
-        });
-  }
-  else {
-        response.writeHead(200, "OK", 
-        {
-        "Content-Type" : "text/plain",
+    response.writeHead(200, "OK",
+      {
+        "Content-Type": "application/pdf",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-        });
-      response.end('Hello World');
+      });
+    let data = request.body.data;
+    let template = request.body.template;
+    const html = documentFormatter.templateRender(template, data);
+    fileConverter.generatePdf(html).toStream(function (err, stream) {
+      stream.pipe(response);
+    });
+  }
+  else {
+    response.writeHead(200, "OK",
+      {
+        "Content-Type": "text/plain",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+      });
+    response.end('Hello World');
   }
 }
 

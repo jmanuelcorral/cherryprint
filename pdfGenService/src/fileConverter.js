@@ -14,7 +14,7 @@ function generatePdf(html) {
 
 function toFile(pdfObject, callback) {
 	const fileName = generateName();
-	pdfObject.toFile(publicDirectory + fileName, function(){
+	pdfObject.toFile(publicDirectory + fileName, function () {
 		callback(fileName, arguments);
 	});
 }
@@ -26,7 +26,7 @@ function toStream(pdfObject, response) {
 		response.setHeader('Content-Disposition', 'attachment; filename=' + fileName);
 		response.attachment(fileName);
 		stream.pipe(response);
-        response.send({filename: fileName});
+		response.send({ filename: fileName });
 	});
 
 }
