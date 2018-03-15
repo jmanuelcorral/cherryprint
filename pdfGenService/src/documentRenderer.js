@@ -1,7 +1,7 @@
 let constants = require('./constants');
 let utils = require('./utils');
 
-let Mustache = require('Mustache');
+let Mustache = require('mustache');
 
 String.prototype.replaceAll = String.prototype.replaceAll || utils.replaceAll;
 
