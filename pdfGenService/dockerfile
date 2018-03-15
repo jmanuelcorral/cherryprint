@@ -1,14 +1,10 @@
-# This is the base for our build step container
-# which has all our build essentials
 FROM node:9.8-alpine 
 
-# Copy in package.json, install 
-# and build all node modules
 ADD . /usr/src/app
 WORKDIR /usr/src/app
 RUN npm install
 ENV PORT 80
 ENV NODE_ENV DEV
 EXPOSE 80
-# Launch our App.
+
 CMD ["npm", "run", "start"]
