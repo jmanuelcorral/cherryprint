@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  reportdesigner:
+    build: ./reportDesigner
+    command: npm run start
+    volumes:
+     - ./reportDesigner:/usr/src/app
+    ports:
+      - "5000:1234"
+    networks:
+      - front-tier
+      - back-tier
+
+  pdfgenservice:
+    build: ./pdfGenService
+    command: npm run start
+    volumes:
+      - ./pdfgenservice:/usr/src/app
+    ports:
+      - "5001:3000"
+    networks:
+      - front-tier
+      - back-tier
+
+networks:
+  front-tier:
+  back-tier:

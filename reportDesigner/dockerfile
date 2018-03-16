@@ -1,0 +1,11 @@
+FROM node:9.8-alpine 
+
+ADD . /usr/src/app
+WORKDIR /usr/src/app
+RUN npm install
+RUN npm install -g parcel-bundler
+#ENV PORT 80
+#ENV NODE_ENV DEV
+#EXPOSE 80
+
+#CMD ["npm", "run", "start"]
