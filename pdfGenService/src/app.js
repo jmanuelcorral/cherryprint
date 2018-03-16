@@ -27,7 +27,7 @@ const requestHandler = (request, response) => {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
       });
-    response.end('Hello World');
+    response.end('Hola');
   }
 }
 

@@ -1,10 +1,8 @@
 let constants = require('./constants');
 let utils = require('./utils');
-
 let Mustache = require('mustache');
 
 String.prototype.replaceAll = String.prototype.replaceAll || utils.replaceAll;
-
 
 function format(requestTemplate) {
 	let template = requestTemplate;

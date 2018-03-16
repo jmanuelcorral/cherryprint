@@ -5,7 +5,7 @@ services:
     build: ./reportDesigner
     command: npm run start
     volumes:
-     - ./reportDesigner:/usr/src/app
+     - ./reportDesigner:/usr/src/app:rw
     ports:
       - "5000:1234"
     networks:
@@ -16,7 +16,7 @@ services:
     build: ./pdfGenService
     command: npm run start
     volumes:
-      - ./pdfgenservice:/usr/src/app
+      - ./pdfgenservice:/usr/src/app:rw
     ports:
       - "5001:3000"
     networks:
