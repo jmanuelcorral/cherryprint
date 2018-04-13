@@ -6,3 +6,6 @@ vendor
 .project
 *.log
 package-lock.json
+.git
+*Dockerfile*
+*docker-compose*

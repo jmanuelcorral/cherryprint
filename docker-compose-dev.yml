@@ -2,23 +2,33 @@ version: "3"
 
 services:
   reportdesigner:
-    build: ./reportDesigner
+    build: 
+      context: ./reportDesigner
+      args:
+        - NODE_ENV=development
+        - CHOKIDAR_USEPOLLING=1
     command: npm run start
     volumes:
-     - ./reportDesigner:/usr/src/app:rw
+     - ./reportDesigner:/opt/app:consistent
     ports:
-      - "5000:1234"
+      - "5000:80"
+      - "33889:33889"
     networks:
       - front-tier
       - back-tier
 
   pdfgenservice:
-    build: ./pdfGenService
+    build: 
+      context: ./pdfGenService
+      args:
+        - NODE_ENV=development
     command: npm run start
     volumes:
-      - ./pdfgenservice:/usr/src/app:rw
+      - ./pdfgenservice:/opt/app:consistent
     ports:
-      - "5001:3000"
+      - "5001:80"
+      - "5858:5858"
+      - "9229:9229"
     networks:
       - front-tier
       - back-tier

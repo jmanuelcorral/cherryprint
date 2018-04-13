@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      data: "Welcome to parcel bundler"
+      data: "Hola desde el container."
     };
   }
 };

@@ -4,15 +4,16 @@
   "description": "simple and lightweight report designer tool",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.html -p 80 --hmr-port 33889 --no-cache",
     "build": "parcel build src/index.html"
   },
   "author": "jmanuelcorral",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.14"
+    "vue": "^2.5.16"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "parcel-bundler": "^1.6.2",
     "parcel-plugin-vue": "^1.5.0"
