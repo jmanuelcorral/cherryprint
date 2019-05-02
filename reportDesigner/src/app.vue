@@ -1,5 +1,3 @@
-// App.vue
-
 <template>
   <div>
     <h3>{{ data }}</h3>
